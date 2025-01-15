@@ -2,11 +2,8 @@ name: check
 on:
   workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: ["main", "ci-test"]
     tags-ignore: ["**"]
-  pull_request:
-  schedule:
-    - cron: "0 8 * * *"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
